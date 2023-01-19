@@ -1,13 +1,10 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
-generator erd {
-  provider = "prisma-erd-generator"
-}
+// generator erd {
+//   provider = "prisma-erd-generator"
+// }
 
 datasource db {
   provider = "sqlite"
@@ -42,7 +39,7 @@ model Day {
 
   dayHabits DayHabit[]
 
-  @@unique([date])
+  @@index([date])
   @@map("days")
 }
 
